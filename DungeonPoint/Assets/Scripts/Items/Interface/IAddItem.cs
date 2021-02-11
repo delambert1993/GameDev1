@@ -1,8 +1,9 @@
 ﻿namespace Game.Entitys.Items.Interface
 {
-    using Game.Entitys.Player;
+    using Game.Player;
+
     public interface IAddItem
     {
-        void Equip(StatsSystem Player);
+        void Equip(PlayerStats Player);
     }
 }

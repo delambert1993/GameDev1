@@ -2,6 +2,7 @@
 {
     using Controllers;
     using Entitys;
+    using Game.Player;
     using Game.Systems;
     using UnityEngine;
 
@@ -13,8 +14,8 @@
         private SystemLvl _lvl;
         public SystemLvl lvl { get => _lvl; set => _lvl = value; }
         [SerializeField]
-        private StatsSystem _charac;
-        public StatsSystem charac { get => _charac; set => _charac = value; }
+        private PlayerStats _charac;
+        public PlayerStats charac { get => _charac; set => _charac = value; }
 
         #region MainMetods
         void OnEnable()

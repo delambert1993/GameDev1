@@ -51,18 +51,14 @@
         #endregion
         public Atributtes()
         {
-            this.vitality = new StatsCharacter(5);
-            defense = new StatsCharacter(5);
+            vitality = new StatsCharacter(5);
+            wisdom = new StatsCharacter(1);            
             barrier = new StatsCharacter(5000f);
-            wisdom = new StatsCharacter(1);
-            damage = new StatsCharacter(1);
             strength = new StatsCharacter(1);
             agility = new StatsCharacter(1);
             intelligence = new StatsCharacter(1);
-            lucky = new StatsCharacter(1);
-            sab = new StatsCharacter(1);
-            scope = new StatsCharacter(1);
-            criticalRate = new StatsCharacter(1);
+            lucky = new StatsCharacter(1);            
+            scope = new StatsCharacter(1);            
         }
     }
 }

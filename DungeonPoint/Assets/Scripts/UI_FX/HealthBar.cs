@@ -26,7 +26,7 @@
             text = GetComponentInChildren<TextMeshProUGUI>();
 
             this.maxHealth = pc.charac.stats.healthMax;
-            this.currHealth = pc.charac.stats.healthCurrent;
+            this.currHealth = pc.charac.stats.health;
 
         }
         void Update()

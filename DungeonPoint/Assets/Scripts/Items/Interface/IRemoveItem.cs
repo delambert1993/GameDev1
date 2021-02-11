@@ -1,8 +1,9 @@
 ﻿namespace Game.Entitys.Items.Interface
 {
-    using Game.Entitys.Player;
+    using Game.Player;
+
     public interface IRemoveItem
     {
-        void UnEquip(StatsSystem Player);
+        void UnEquip(PlayerStats Player);
     }
 }

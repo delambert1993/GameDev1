@@ -3,13 +3,13 @@ namespace Game.Entitys.Items
 {
     using Game.Controllers.Characteristics;
     using Game.Entitys.Items.Interface;
-    using Game.Entitys.Player;
+    using Game.Player;
 
     public class ItemStarterPlayer : Item , IAddItem, IRemoveItem
     {
-        public override void Equip(StatsSystem Player)
+        public override void Equip(PlayerStats Player)
         {
-            Player.attr.vitality.AddModifier(new StatsModifier(5, StatModType.Flat));
+            Player.attr.vi.AddModifier(new StatsModifier(5, StatModType.Flat));
             Player.attr.defense.AddModifier(new StatsModifier(5, StatModType.Flat));
             Player.attr.barrier.AddModifier(new StatsModifier(5, StatModType.Flat));
             Player.attr.wisdom.AddModifier(new StatsModifier(5, StatModType.Flat));
@@ -24,7 +24,7 @@ namespace Game.Entitys.Items
             Player.attr.criticalRate.AddModifier(new StatsModifier(5, StatModType.Flat));
         }
 
-        public override void UnEquip(StatsSystem Player)
+        public override void UnEquip(PlayerStats Player)
         {
             Player.attr.vitality.RemoveAllModifiersFromSource(this);
             Player.attr.defense.RemoveAllModifiersFromSource(this);
