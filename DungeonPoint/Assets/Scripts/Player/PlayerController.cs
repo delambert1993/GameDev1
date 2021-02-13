@@ -49,6 +49,11 @@
         {
             anim.SetFloat("speed", nav.nav.velocity.magnitude);
             AttackColdown();
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                XpSystem.instance.AddXP(10);
+            }
+                XpSystem.instance.GetXP();
         }
 
         void AttackColdown()
@@ -82,6 +87,10 @@
 
         #region HelperMetods        
 
+        void GetXP()
+        {
+            XpSystem.instance.GetXP();
+        }
         private void InitializeClass()
         {
             lvl = new SystemLvl();

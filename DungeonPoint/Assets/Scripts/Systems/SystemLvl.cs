@@ -8,10 +8,10 @@
         private float _xp;
         public float xp { get => _xp; set => _xp = value; }
 
-        private float _lvlCurrent;
-        public float lvlCurrent { get => _lvlCurrent; set => _lvlCurrent = value; }
+        private int _lvlCurrent;
+        public int lvlCurrent { get => _lvlCurrent; set => _lvlCurrent = value; }
 
-        public void UpdateXp(int Amount)
+        public void UpdateXp(float Amount)
         {
             xp = Amount;
             int curLvl = (int)(0.1f * Math.Sqrt(xp));
