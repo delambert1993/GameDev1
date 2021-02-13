@@ -27,13 +27,17 @@
         private float _speed;
         public float speed { get => _speed; set => _speed = value; }
 
-        public Atributtes(float health, float barrier, float speed)
+        private float _damage;
+        public float damage { get => _damage; set => _damage = value; }
+
+        public Atributtes(float health, float barrier, float speed, float damage)
         {
             this.healthMax = health;
             this.barrierMax = barrier;
             this.healthCurrent = healthMax;
             this.barrierCurrent = barrierMax;
             this.speed = speed;
+            this.damage = damage;
                 
         }
 

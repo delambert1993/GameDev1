@@ -23,9 +23,9 @@
         {
             
         }
-        public void InitialiceStats(float health, float barrier, float speed)
+        public void InitialiceStats(float health, float barrier, float speed, float damage)
         {
-            attr = new Atributtes(health,barrier, speed);
+            attr = new Atributtes(health,barrier, speed, damage);
 
         }
         private void CalculateValues()
