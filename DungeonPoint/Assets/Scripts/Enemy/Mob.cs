@@ -1,8 +1,10 @@
 ﻿namespace Assets.Scripts.Enemy
 {
+    using Game.Entitys.Player;
     using UnityEngine;
     public class Mob : MonoBehaviour
     {
+        public float xpAmount = 10f;
         public float health;
         public float speed;
         public GameObject effect;
@@ -30,6 +32,7 @@
         {
             if(this.health <= 0)
             {
+                XpSystem.instance.AddXP(xpAmount);
                 Destroy(this.gameObject);
             }            
         }

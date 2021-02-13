@@ -12,6 +12,10 @@
     {
         InputController input;
         [SerializeField]
+        private float _xpCurrent;
+        public float xpCurrent { get => _xpCurrent; set => _xpCurrent = value; }
+        private float _toLvlUp;
+        public float toLvlUp { get => _toLvlUp; set => _toLvlUp = value; }
         private SystemLvl _lvl;
         public SystemLvl lvl { get => _lvl; set => _lvl = value; }
         [SerializeField]
