@@ -30,14 +30,13 @@
             }
         }
         #endregion
-        public GameObject camObj;
-        public CameraController cam;
-        public Transform target;
-        public PlayerController player;    
+        public CameraController cam;        
+        public PlayerController player;
+        public PrefabSpawner spawn;
         // Start is called before the first frame update
         void Start()
         {
-            this.cam = FindObjectOfType<CameraController>();
+            this.cam = FindObjectOfType<CameraController>();            
             this.player = FindObjectOfType<PlayerController>();
             cam.SetTarget(player.gameObject.transform);
         }

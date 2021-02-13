@@ -1,8 +1,7 @@
 ﻿namespace Game.Entitys.Player
 {
+    using Assets.Scripts.Enemy;
     using Controllers;
-    using Entitys;
-    using Game.Controllers.Characteristics;
     using Game.Player;
     using Game.Systems;
     using UnityEngine;
@@ -22,6 +21,14 @@
         private Animator _anim;
         public Animator anim { get => _anim; set => _anim = value; }
 
+        //Attack
+        float timeBtwAttack;
+        public float startBtwAttack;
+        public Transform attackPos;
+        public LayerMask whatIsEnemies;
+        public float attackRange;
+        public float damage;
+
         #region MainMetods
         void Awake()
         {
@@ -37,19 +44,35 @@
         private void Update()
         {
             anim.SetFloat("speed", nav.nav.velocity.magnitude);
+            AttackColdown();
+        }
 
-
-            if (Input.GetKeyDown(KeyCode.R))
+        void AttackColdown()
+        {
+            if (timeBtwAttack <= 0)
             {
-                Attack();
+                if (Input.GetKeyDown(KeyCode.R))
+                { 
+                    anim.SetTrigger("atack");                                    
+                    Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, whatIsEnemies);
+                    
+                    for (int i = 0; i < enemiesToDamage.Length; i++)
+                    {
+                        if (enemiesToDamage[i])
+                        {
+                            enemiesToDamage[i].GetComponent<Mob>().TakeDamage(damage);
+                            Debug.Log("Health -");
+                        }
+                    }
+                
+                    timeBtwAttack = startBtwAttack;
+                }
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime;
             }
         }
-
-        void Attack()
-        {
-            anim.SetTrigger("atack");
-        }
-    
         #endregion
 
         #region HelperMetods        
@@ -60,7 +83,11 @@
             charac.InitialiceStats(100, 100, 10, 10);
             charac.UpdateUI();
         }
-
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        }
         #endregion
     }
 }
