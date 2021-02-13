@@ -2,44 +2,54 @@
 {
     using System;
     using Game.Controllers.Characteristics.Stats;
+    using TMPro;
     using UnityEngine;
+    using UnityEngine.UI;
+
     [Serializable]
-    public class PlayerStats : MonoBehaviour
+    public class PlayerStats
     {
-        private Attribute _attr;
-        public Attribute attr { get => _attr; set=> _attr = value; }
-        private Characteristic _charac;
-        public Characteristic charac { get => _charac; set => _charac = value; }
+        
+        private Atributtes _attr;
+        public Atributtes attr { get => _attr; set => _attr = value; }
 
-        private float lvlCurrent;
-        private float xp;
-        private float xpCurrent;
+        [SerializeField]
+        private Image imgUIHealth;
+        [SerializeField]
+        private TextMeshProUGUI txt;
+        [SerializeField]
+        private Image imgUIBarrier;
+        void Start()
+        {
+            
+        }
+        public void InitialiceStats(float health, float barrier, float speed)
+        {
+            attr = new Atributtes(health,barrier, speed);
 
-        private int[] toLevelUp;
-        private int[] attackLevels;
-        private int[] defenceLevels;
+        }
+        private void CalculateValues()
+        {
+            if(attr.healthCurrent == 0)
+            {
+                Debug.Log("Player is dead");
+            }
+            UpdateUI();
 
-        private float healthCurrent;
-        private float defenseCurrent;
-        private float barrierCurrent;
-        private float speedCurrent;
-        private float physicDamageCurrent;
-        private float powerDamageCurrent;
-        private float physicResistanceCurrent;
-        private float powerResistanceCurrent;
-        private float criticalRate;
+        }
 
-        /*       
-            health = 1f;
-            defense = 1;
-            barrier = 5000f;
-            velocity = 1;
-            physicalDamage = 1;            
-            powerDamage = 1;
-            physicalResistance = 1;
-            powerResistance = 1;
-            criticalRate = 1;*/
-
-
+        public void TakeDamage(float Amount)
+        {
+            this.attr.healthCurrent -= Amount;
+            UpdateUI();
+        }
+        public void UpdateUI()
+        {
+            var healthUI = Mathf.Clamp(attr.healthMax, 0, 100f);
+            var barrierUI = Mathf.Clamp(attr.barrierMax, 0, 100f);
+            imgUIHealth.fillAmount = healthUI;
+            imgUIBarrier.fillAmount = barrierUI;
+            txt.text = "HP: " + attr.healthCurrent.ToString();            
+        }
     }
 }

@@ -37,7 +37,7 @@
         void Start()
         {
             InitialiceClass();
-            HandleCamera();
+            HandleCamera();            
         }
         void Update()
         {
