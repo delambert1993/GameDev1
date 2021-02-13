@@ -52,7 +52,8 @@
             if (timeBtwAttack <= 0)
             {
                 if (Input.GetKeyDown(KeyCode.R))
-                { 
+                {
+                    anim.SetTrigger("shake");
                     anim.SetTrigger("atack");                                    
                     Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, whatIsEnemies);
                     
@@ -60,7 +61,7 @@
                     {
                         if (enemiesToDamage[i])
                         {
-                            enemiesToDamage[i].GetComponent<Mob>().TakeDamage(damage);
+                            enemiesToDamage[i].GetComponent<Mob>().TakeDamage(damage, this.transform.position);
                             Debug.Log("Health -");
                         }
                     }

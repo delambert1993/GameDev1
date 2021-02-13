@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 191425274}
   - component: {fileID: 191425273}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: HitCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.76
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &220284580 stripped
 MonoBehaviour:
@@ -491,6 +491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  speed: 8
+  effect: {fileID: 167058, guid: 1625b0df15965450c86850dd6d345e87, type: 3}
 --- !u!54 &254165768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -518,7 +520,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.02
+  m_Radius: 1.42
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &602437358
 GameObject:
