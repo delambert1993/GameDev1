@@ -24,7 +24,7 @@
         private NavController nav;
         private Animator _anim;
         public Animator anim { get => _anim; set => _anim = value; }
-
+        public AudioFeet clipFeet;
 
         //Interaction
         private GameObject triggeringNpc;
@@ -46,19 +46,20 @@
         private void Start()
         {
             anim = this.GetComponent<Animator>();
+            clipFeet = FindObjectOfType<AudioFeet>();
             nav = this.GetComponent<NavController>();
             input = new InputController(anim);
         }
-        private void Update()
+        private void LateUpdate()
         {
             
-            if(Input.GetKey(KeyCode.R))
-            {
-                Attack();
-            }
+        }
+        private void Update()
+        {
             anim.SetFloat("speed", nav.nav.velocity.magnitude);
-            AttackColdown();
-            if(Input.GetKeyDown(KeyCode.Space))
+
+            AnimationsPlayer.instance.Attack();
+            if(Input.GetKeyUp(KeyCode.Space))
             {
                 XpSystem.instance.AddXP(10);
             }
@@ -69,22 +70,19 @@
                 print("Player is triggering with " + triggeringNpc.name);
             }
 
-        }
-
-        void Attack()
-        {
-            anim.SetTrigger("atack");
-            Debug.Log("ataqued");
-        }
-
-       
+        }       
 
         #endregion
 
-        #region HelperMetods        
+        #region HelperMetods     
+        
+        void Pisar()
+        {
+            clipFeet.PlaySound();
+        }
         void AttackColdown()
         {
-            if (timeBtwAttack <= 0)
+            /*if (timeBtwAttack <= 0)
             {
                 if (Input.GetKeyDown(KeyCode.R))
                 {
@@ -107,7 +105,7 @@
             else
             {
                 timeBtwAttack -= Time.deltaTime;
-            }
+            }*/
         }
 
         void GetXP()

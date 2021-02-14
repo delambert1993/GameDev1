@@ -10,7 +10,7 @@ public class NpcController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        txt = this.transform.FindChild("UIInteract").GetComponentInChildren<LookToCamara>().gameObject;
+        txt = this.transform.Find("UIInteract").GetComponentInChildren<LookToCamara>().gameObject;
         txt.SetActive(false);
     }
 
