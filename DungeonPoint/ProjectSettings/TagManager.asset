@@ -8,6 +8,8 @@ TagManager:
   - Camera
   - Enemy
   - NPC
+  - PlayerColliders
+  - GetHitCollider
   layers:
   - Default
   - TransparentFX

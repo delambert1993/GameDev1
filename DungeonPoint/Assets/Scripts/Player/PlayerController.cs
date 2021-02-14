@@ -51,6 +51,11 @@
         }
         private void Update()
         {
+            
+            if(Input.GetKey(KeyCode.R))
+            {
+                Attack();
+            }
             anim.SetFloat("speed", nav.nav.velocity.magnitude);
             AttackColdown();
             if(Input.GetKeyDown(KeyCode.Space))
@@ -63,26 +68,16 @@
             {
                 print("Player is triggering with " + triggeringNpc.name);
             }
+
         }
 
-        private void OnTriggerEnter(Collider other)
+        void Attack()
         {
-            if (other.CompareTag("NPC"))
-            {
-                Debug.Log("Npc proximity");
-                triggering = false;
-                triggeringNpc = other.gameObject;
-            }
+            anim.SetTrigger("atack");
+            Debug.Log("ataqued");
         }
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("NPC"))
-            {
-                Debug.Log("Npc not aprox");
-                triggering = false;
-                triggeringNpc = null;
-            }
-        }
+
+       
 
         #endregion
 

@@ -3,6 +3,7 @@
     using UnityEngine;
     public class CameraController : MonoBehaviour
     {
+        
 
         #region Variables
         private Transform _target;
