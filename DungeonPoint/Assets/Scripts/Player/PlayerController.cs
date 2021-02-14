@@ -25,6 +25,10 @@
         private Animator _anim;
         public Animator anim { get => _anim; set => _anim = value; }
 
+
+        //Interaction
+        private GameObject triggeringNpc;
+        private bool triggering;        
         //Attack
         float timeBtwAttack;
         public float startBtwAttack;
@@ -54,8 +58,35 @@
                 XpSystem.instance.AddXP(10);
             }
                 XpSystem.instance.GetXP();
+
+            if(triggering)
+            {
+                print("Player is triggering with " + triggeringNpc.name);
+            }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("NPC"))
+            {
+                Debug.Log("Npc proximity");
+                triggering = false;
+                triggeringNpc = other.gameObject;
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("NPC"))
+            {
+                Debug.Log("Npc not aprox");
+                triggering = false;
+                triggeringNpc = null;
+            }
+        }
+
+        #endregion
+
+        #region HelperMetods        
         void AttackColdown()
         {
             if (timeBtwAttack <= 0)
@@ -83,9 +114,6 @@
                 timeBtwAttack -= Time.deltaTime;
             }
         }
-        #endregion
-
-        #region HelperMetods        
 
         void GetXP()
         {
