@@ -5,63 +5,28 @@ using UnityEngine;
 public class CollidersOverlap : MonoBehaviour
 {
     public float amount;
-    public bool colisionEnemy = false;
-    Collider2D[] hitEnemiesZY;
-    Collider2D[] hitEnemiesZX;
-    void A()
-    {
-        Physics2D.OverlapCircleAll(new Vector2(this.transform.position.z, this.transform.position.y), amount);
-        
-    }
+    public bool colisionEnemy;
+    Collider[] hitEnemies;
+    public string enemyTag = "Enemy";
+
     private void FixedUpdate()
     {
-        HitBoxZY();
-        HitBoxZX();
+        HitBox();
     }
-    void HitBoxZY()
+    void HitBox()
     {
-        hitEnemiesZY = Physics2D.OverlapCircleAll(new Vector2(this.transform.position.z, this.transform.position.y), amount);
+        hitEnemies = Physics.OverlapSphere(new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), amount);
 
-        foreach (var i in hitEnemiesZY)
+        foreach (var i in hitEnemies)
         {
-            if(i.gameObject.tag == ("Enemy"))
+            if(i.CompareTag(enemyTag))
             {
-                foreach (var enemy in HIT)
-                {
-
-                }
                 colisionEnemy = true;
-                f (colisionEnemy)
-                {
-                    Debug.Log("Enemy colision");
-                }       
-            }
+                Debug.Log(i.name);
+            }       
             else
             {
                 colisionEnemy = false;
-                Debug.Log("____________________");
-            }
-        }
-    }
-        
-    void HitBoxZX()
-    {
-         hitEnemiesZX = Physics2D.OverlapCircleAll(new Vector2(this.transform.position.z, this.transform.position.y), amount);
-
-        foreach (var i in hitEnemiesZX)
-        {
-            if (i.gameObject.tag == ("Enemy"))
-            {
-                colisionEnemy = true;
-                while (colisionEnemy)
-                {
-                    Debug.Log("Enemy colision");
-                }
-            }
-            else
-            {
-                colisionEnemy = false;
-                Debug.Log("____________________");
             }
         }
     }

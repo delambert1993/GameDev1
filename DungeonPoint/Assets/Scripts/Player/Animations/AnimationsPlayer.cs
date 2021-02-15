@@ -30,6 +30,7 @@ public class AnimationsPlayer : MonoBehaviour
         {
             if (canReceiveInput)
             {
+                Debug.Log("R pressed.");
                 inputReceived = true;
                 canReceiveInput = false;
             }

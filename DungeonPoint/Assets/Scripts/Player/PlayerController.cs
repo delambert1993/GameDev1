@@ -56,9 +56,9 @@
         }
         private void Update()
         {
-            anim.SetFloat("speed", nav.nav.velocity.magnitude);
-
             AnimationsPlayer.instance.Attack();
+
+            anim.SetFloat("speed", nav.nav.velocity.magnitude);
             if(Input.GetKeyUp(KeyCode.Space))
             {
                 XpSystem.instance.AddXP(10);

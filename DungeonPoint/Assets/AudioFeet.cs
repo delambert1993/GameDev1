@@ -29,7 +29,7 @@ public class AudioFeet : MonoBehaviour
     }
     public void PlaySound()
     {   
-            clip = GetRandomClip();
+            clip = GetRandomClip();        
             this.audioSource.PlayOneShot(clip);
     }
 }

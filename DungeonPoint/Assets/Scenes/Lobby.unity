@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.1
   colisionEnemy: 0
+  enemyTag: Enemy
 --- !u!1 &251925734
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.1
   colisionEnemy: 0
+  enemyTag: Enemy
 --- !u!1 &452222714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.1
   colisionEnemy: 0
+  enemyTag: Enemy
 --- !u!1 &1863318314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb608ce68db17459b9f4f5c85ca84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _height: 30
+  _height: 4
   _distance: 4
   _angle: 45
   _cam: {fileID: 0}
@@ -2077,6 +2080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.1
   colisionEnemy: 0
+  enemyTag: Enemy
 --- !u!4 &2057187968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1824824446595371411, guid: fa50ce7b7cd6bc540a29324345554c7b,
