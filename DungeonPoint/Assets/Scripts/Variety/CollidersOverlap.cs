@@ -26,8 +26,12 @@ public class CollidersOverlap : MonoBehaviour
         {
             if(i.gameObject.tag == ("Enemy"))
             {
+                foreach (var enemy in HIT)
+                {
+
+                }
                 colisionEnemy = true;
-                while (colisionEnemy)
+                f (colisionEnemy)
                 {
                     Debug.Log("Enemy colision");
                 }       

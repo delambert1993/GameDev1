@@ -8,11 +8,13 @@ public class AudioFeet : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip[] clips;
+    private AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = this.GetComponent<AudioSource>();
+        clips = new AudioClip[29];
     }
     
     // Update is called once per frame
@@ -22,15 +24,12 @@ public class AudioFeet : MonoBehaviour
     }
     //Play Event in animation
     protected AudioClip GetRandomClip()
-    {
+    {        
         return clips[Random.Range(0, clips.Length)];
     }
     public void PlaySound()
-    {
-       
-        
-            this.audioSource.clip = GetRandomClip();
-            audioSource.Play();
-       
+    {   
+            clip = GetRandomClip();
+            this.audioSource.PlayOneShot(clip);
     }
 }
