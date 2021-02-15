@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ad926a668250b4d9aab90b44c926aa, type: 3}
+  m_Name: TestLibrary
+  m_EditorClassIdentifier: 
+  TopLeftInnerCorner:
+  - {fileID: 1097727657284457582, guid: 67c37cb55d5f3c643aeef7dc58c966f3, type: 3}
+  TopRightInnerCorner:
+  - {fileID: 7561903444903894945, guid: a622ec5645b7a1e408eaf25bb54bdcc8, type: 3}
+  BottomLeftInnerCorner:
+  - {fileID: 814912770434254, guid: b041be4319e6c5b49a4f42465bd6445b, type: 3}
+  BottomRightInnerCorner:
+  - {fileID: 3309045914949445396, guid: a16cb841dc74ea14db8aa2bad0d321cf, type: 3}
+  TopBorder:
+  - {fileID: 5139384770549701392, guid: 9914a0e6ee243664eb9483ab5f045285, type: 3}
+  BottomBorder:
+  - {fileID: 3006123610342377599, guid: 9dfd4064857136942aa1b40cc629c0cc, type: 3}
+  LeftBorder:
+  - {fileID: 3347625858106044317, guid: 8c2a9426f04a40e49aa12b1ac1b03f5e, type: 3}
+  RightBorder:
+  - {fileID: 7669549592360897831, guid: 216cafc9f87567149904019b42a46020, type: 3}
+  TopBorderDoor:
+  - {fileID: 3892931674390415448, guid: 9b11257ee5b4fd94d9deef89d3166005, type: 3}
+  BottomBorderDoor:
+  - {fileID: 2786575484586286194, guid: 6d21eeceec838504e9d920bc6d990327, type: 3}
+  LeftBorderDoor:
+  - {fileID: 3607688866620614576, guid: 53bbf233edb67974495056e9a4c55d91, type: 3}
+  RightBorderDoor:
+  - {fileID: 4108668299330854608, guid: 54f9bb387df3e2440892cd0a0536d37a, type: 3}
+  FloorTiles:
+  - {fileID: 488378069291607037, guid: f3995c2cc214c2b4a87da130282a4a5a, type: 3}
+  HorizontalHallway:
+  - {fileID: 8222619403648109915, guid: e9335552eb380024d88ad94ef45997e1, type: 3}
+  VerticalHallway:
+  - {fileID: 926432599514381509, guid: 37bd3a680c81b1b409a7de366daa59b3, type: 3}
+  VerticalDivisions:
+  - {fileID: 601931481828231248, guid: 59b008d6fabf2e84d9e91fa49efe5e0e, type: 3}
+  HorizontalDivisions:
+  - {fileID: 8623020110307939409, guid: 9e169e717316ad74394c8297cc5f0513, type: 3}
